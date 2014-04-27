@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  sudo: true
+  vars_files:
+    - vars/defaults.yml
+    - vars/{{ 'vagrant' if vagrant is defined else 'user' }}.yml
+
+  roles:
+    - common
