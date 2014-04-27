@@ -1,0 +1,17 @@
+---
+# file: vars/defaults.yml
+
+# Users can be customize as needed
+users:
+  - username: guillaume
+    name: Guillaume Dedrie
+    groups: ['users']
+    uid: 1002
+    ssh_key:
+      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+# If you want to delete a specific user
+#users_deleted:
+  #- username: guillaume
+    #name: Guillaume Dedrie
+    #uid: 1002
