@@ -1,0 +1,28 @@
+---
+# file: tasks/Debian.yml
+
+- name: Install Debian build tools
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - build-essential
+    - libtool
+    - autoconf
+    - automake
+    - autoconf-archive
+    - pkg-config
+
+- name: Install Debian CouchDB dependencies
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - libssl1.0.0
+    - libssl-dev
+    - zlib1g
+    - zlib1g-dev
+    - libcurl4-openssl-dev
+    - lsb-base
+    - ncurses-dev
+    - libncurses-dev
+    - libmozjs-dev
+    - libmozjs2d
+    - libicu-dev
+    - xsltproc
