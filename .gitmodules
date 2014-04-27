@@ -4,3 +4,6 @@
 [submodule "roles/openssh"]
 	path = roles/openssh
 	url = https://github.com/Ansibles/openssh.git
+[submodule "roles/nodejs"]
+	path = roles/nodejs
+	url = https://github.com/AnsibleShipyard/ansible-nodejs.git

@@ -9,6 +9,7 @@
   roles:
     - common
     - users
-
     # Security roles
     - openssh
+    # Cloud installation roles
+    - cozy

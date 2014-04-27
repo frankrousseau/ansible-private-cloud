@@ -1,0 +1,20 @@
+---
+# file: tasks/main.yml
+
+- name: Install tools
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - python
+    - python-dev
+    - python-setuptools
+    - python-pip
+    - openssl
+    - libssl-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - build-essential
+    - git
+    - sudo
+    - lsb-release
+    - imagemagick
+    - sqlite3

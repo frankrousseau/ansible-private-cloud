@@ -1,0 +1,5 @@
+---
+# file: meta/main.yml
+
+dependencies:
+  - { role: nodejs, nodejs_version: '0.10.26' }
