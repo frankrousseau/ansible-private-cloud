@@ -9,3 +9,6 @@
   roles:
     - common
     - users
+
+    # Security roles
+    - openssh

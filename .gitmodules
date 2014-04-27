@@ -1,3 +1,6 @@
 [submodule "roles/users"]
 	path = roles/users
-	url = https://github.com/mivok/ansible-users
+	url = https://github.com/mivok/ansible-users.git
+[submodule "roles/openssh"]
+	path = roles/openssh
+	url = https://github.com/Ansibles/openssh.git
