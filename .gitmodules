@@ -13,3 +13,18 @@
 [submodule "roles/Ansibles.erlang"]
 	path = roles/Ansibles.erlang
 	url = https://github.com/Ansibles/erlang.git
+[submodule "roles/Ansibles.nginx"]
+	path = roles/Ansibles.nginx
+	url = https://github.com/Ansibles/nginx.git
+[submodule "roles/Ansibles.hostname"]
+	path = roles/Ansibles.hostname
+	url = https://github.com/Ansibles/hostname.git
+[submodule "roles/Ansibles.apt"]
+	path = roles/Ansibles.apt
+	url = https://github.com/Ansibles/apt.git
+[submodule "roles/Ansibles.perl"]
+	path = roles/Ansibles.perl
+	url = https://github.com/Ansibles/perl.git
+[submodule "roles/Ansibles.monit"]
+	path = roles/Ansibles.monit
+	url = https://github.com/Ansibles/monit.git

@@ -1,5 +1,5 @@
 ---
 # file: meta/main.yml
 
-#dependencies:
-  #- { role: Ansibles.erlang, erlang-version: "R16B03"  }
+dependencies:
+  - { role: Ansibles.erlang, erlang-version: "R16B03"  }

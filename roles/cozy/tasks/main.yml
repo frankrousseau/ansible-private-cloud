@@ -18,3 +18,26 @@
     - lsb-release
     - imagemagick
     - sqlite3
+
+- include: users.yml
+
+- name: Install packages
+  npm: name={{ item }} global=yes
+  with_items:
+    - coffee-script
+    - cozy-monitor
+    - forever
+
+- name: Install Brunch package
+  npm: name=brunch global=yes version=1.6.3
+
+#- include: controller.yml
+#- include: indexer.yml
+
+#- name: Install data-system, home, proxy
+  #command: cozy-monitor install {{ item }}
+  #sudo: true
+  #with_items:
+    #- data-system
+    #- home
+    #- proxy

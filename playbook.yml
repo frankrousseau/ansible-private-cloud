@@ -13,3 +13,4 @@
     - openssh
     # Cloud installation roles
     - cozy
+    - Ansibles.nginx
