@@ -2,4 +2,7 @@
 # file: handlers/main.yml
 
 - name: Restart Cozy controller
-  service: name=cozy-controller state=restarted
+  supervisorctl: name=cozy-controller state=restarted
+
+- name: Restart Cozy indexer
+  supervisorctl: name=cozy-indexer state=restarted

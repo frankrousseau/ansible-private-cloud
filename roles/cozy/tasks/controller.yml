@@ -9,12 +9,16 @@
 
 - name: Configure Cozy controller
   template: src=controller.token.j2 dest=/etc/cozy/controller.token owner=cozy-home mode=0700
+
+- name: Copy Supervisor file for Cozy controller
+  copy: src=cozy-controller.conf dest=/etc/supervisor/conf.d/cozy-controller.conf mode=0755
   notify: Restart Cozy controller
 
-- name: Copy init.d file for controller
-  copy: src=cozy-controller dest=/etc/init.d/cozy-controller mode=0755
-  notify: Restart Cozy controller
+- name: Start Cozy controller process
+  supervisorctl: name=cozy-controller state=present
 
-# TODO: Check controller service
+#- name: Check if server is running
+  #uri: url=http://127.0.0.1:9002/
+
 # TODO: Add support for monit
 # TODO: Add possibility to change NODE_ENV var in init file
