@@ -12,5 +12,5 @@
     # Security roles
     - openssh
     # Cloud installation roles
-    - cozy
+    - { role: cozy, tags: 'cozy' }
     - Ansibles.nginx

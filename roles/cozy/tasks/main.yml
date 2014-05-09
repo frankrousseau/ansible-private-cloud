@@ -31,7 +31,7 @@
 - name: Install Brunch package
   npm: name=brunch global=yes version=1.6.3
 
-#- include: controller.yml
+- include: controller.yml tags=cozy-controller
 #- include: indexer.yml
 
 #- name: Install data-system, home, proxy

@@ -1,0 +1,20 @@
+---
+# file: tasks/controller.yml
+
+- name: Prepare controller
+  npm: name=cozy-controller global=yes
+
+- name: Create directories
+  file: path=/etc/cozy/pids state=directory
+
+- name: Configure Cozy controller
+  template: src=controller.token.j2 dest=/etc/cozy/controller.token owner=cozy-home mode=0700
+  notify: Restart Cozy controller
+
+- name: Copy init.d file for controller
+  copy: src=cozy-controller dest=/etc/init.d/cozy-controller mode=0755
+  notify: Restart Cozy controller
+
+# TODO: Check controller service
+# TODO: Add support for monit
+# TODO: Add possibility to change NODE_ENV var in init file
