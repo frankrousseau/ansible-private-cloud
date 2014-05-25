@@ -1,2 +1,8 @@
 .vagrant/
 *~
+roles/Ansibles.build-essential/
+roles/Ansibles.erlang/
+roles/Ansibles.openssh/
+roles/JasonGiedymin.nodejs/
+roles/guillaumededrie.couchdb/
+roles/mivok0.users/

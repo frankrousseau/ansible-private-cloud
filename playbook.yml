@@ -5,12 +5,11 @@
   vars_files:
     - vars/defaults.yml
     - vars/{{ 'vagrant' if vagrant is defined else 'user' }}.yml
-
   roles:
     - common
-    - users
+    - { role: mivok0.users, tags: 'users' }
     # Security roles
-    - openssh
+    - { role: Ansibles.openssh, tags: 'openssh' }
     # Cloud installation roles
     - { role: cozy, tags: 'cozy' }
-    - Ansibles.nginx
+    #- { role: Ansibles.nginx, tags: 'nginx' }

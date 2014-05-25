@@ -1,7 +1,6 @@
 
 Vagrant.configure('2') do |config|
-  config.vm.box = 'Wheezy 64'
-  config.vm.box_url = 'https://sovereign.lukecyca.com/vagrant/wheezy64.box'
+  config.vm.box = 'chef/debian-7.4'
   config.vm.hostname = 'pcloud.local'
   config.vm.network 'private_network', ip: '10.0.0.10'
 

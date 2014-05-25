@@ -6,7 +6,7 @@ users:
   - username: guillaume
     name: Guillaume Dedrie
     groups: ['users']
-    uid: 1002
+    uid: 1001
     ssh_key:
       - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 

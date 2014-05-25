@@ -2,5 +2,5 @@
 # file: meta/main.yml
 
 dependencies:
-  - { role: nodejs, nodejs_version: '0.10.26' }
-  - { role: couchdb, couchdb_version: '1.5.0' }
+  - { role: JasonGiedymin.nodejs, nodejs_version: '0.10.26' }
+  - { role: guillaumededrie.couchdb, couchdb_version: '1.5.0' }
