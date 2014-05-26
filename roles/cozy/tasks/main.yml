@@ -27,7 +27,6 @@
   with_items:
     - coffee-script
     - cozy-monitor
-    - forever
 
 - name: Install Brunch package
   npm: name=brunch global=yes version=1.6.3
@@ -35,10 +34,10 @@
 - include: controller.yml tags=cozy-controller
 - include: indexer.yml tags=cozy-indexer
 
-#- name: Install data-system, home, proxy
-  #command: cozy-monitor install {{ item }}
-  #sudo: true
-  #with_items:
-    #- data-system
-    #- home
-    #- proxy
+- name: Install data-system, home, proxy
+  command: cozy-monitor install {{ item }}
+  sudo: true
+  with_items:
+    - data-system
+    - home
+    - proxy

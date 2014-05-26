@@ -2,10 +2,7 @@
 # file: tasks/indexer.yml
 
 - name: Install Virtualenv
-  apt: pkg={{ item }} state=latest
-  with_items:
-    - python-virtualenv
-    - supervisor
+  apt: pkg=python-virtualenv state=latest force=yes
 
 - name: Create Cozy-indexer home
   file: path=/usr/local/cozy-indexer state=directory owner=cozy group=cozy
@@ -20,11 +17,8 @@
   file: path=/usr/local/cozy-indexer state=directory owner=cozy group=cozy recurse=yes
 
 - name: Copy Supervisor file for Cozy indexer
-  copy: src=cozy-indexer.conf dest=/etc/supervisor/conf.d/cozy-indexer.conf mode=0755
+  copy: src=cozy-indexer.conf dest=/etc/supervisor/conf.d/cozy-indexer.conf owner=root mode=0755
   notify: Restart Cozy indexer
 
-- name: Start Cozy indexer process
-  supervisorctl: name=cozy-indexer state=present
-
-#- name: Check if server is running
-  #uri: url=http://127.0.0.1:9102/
+- name: Check if Cozy-indexer is properly running
+  uri: url=http://127.0.0.1:9102/
