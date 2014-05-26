@@ -18,6 +18,7 @@
     - lsb-release
     - imagemagick
     - sqlite3
+    - supervisor
 
 - include: users.yml
 

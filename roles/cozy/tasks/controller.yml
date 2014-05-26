@@ -11,14 +11,13 @@
   template: src=controller.token.j2 dest=/etc/cozy/controller.token owner=cozy-home mode=0700
 
 - name: Copy Supervisor file for Cozy controller
-  copy: src=cozy-controller.conf dest=/etc/supervisor/conf.d/cozy-controller.conf mode=0755
+  copy: src=cozy-controller.conf dest=/etc/supervisor/conf.d/cozy-controller.conf owner=root mode=0755
   notify: Restart Cozy controller
 
-- name: Start Cozy controller process
-  supervisorctl: name=cozy-controller state=present
-
-#- name: Check if server is running
-  #uri: url=http://127.0.0.1:9002/
+- name: Check if server is running
+  uri: url=http://127.0.0.1:9002/
+  register: controller_output
+  failed_when: '"Wrong auth token" != (controller_output.content|from_json).error'
 
 # TODO: Add support for monit
 # TODO: Add possibility to change NODE_ENV var in init file
