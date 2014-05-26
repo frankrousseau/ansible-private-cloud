@@ -4,7 +4,7 @@
   sudo: true
   vars_files:
     - vars/defaults.yml
-    - vars/{{ 'vagrant' if vagrant is defined else 'user' }}.yml
+    - vars/{{ 'vagrant' if vagrant|default(False) != False else 'user' }}.yml
   roles:
     - common
     - { role: mivok0.users, tags: 'users' }
